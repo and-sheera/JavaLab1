@@ -11,7 +11,7 @@ public class Container {
     /**
      * Class constructor
      */
-    Container() {
+    public Container() {
         this.head = null;
     }
 
@@ -19,7 +19,7 @@ public class Container {
      * Adds a number to the beginning of the list
      * @param data item data
      */
-    void addToBeg (int data) {
+    public void addToBeg (int data) {
         ContainerElement firstElement = new ContainerElement(data);
         ContainerElement exHead = this.head;
         head = firstElement;
@@ -30,7 +30,7 @@ public class Container {
      * Adds a number to the end of the list
      * @param data item data
      */
-    void push (int data) {
+    public void push (int data) {
         ContainerElement newElement = new ContainerElement(data);
         if (this.head == null) {
             this.head = newElement;
@@ -48,7 +48,7 @@ public class Container {
      * @param after the index after which the number will be inserted
      * @param data inserted item data
      */
-    void insert(int after, int data) {
+    public void insert(int after, int data) {
         if (after < 1 || after > this.length()) {
           throw new IllegalArgumentException("No element found with this index");
         }
@@ -70,7 +70,7 @@ public class Container {
      * Removes an element
      * @param index the index of the item to remove
      */
-    void delete (int index) {
+    public void delete (int index) {
         if (index < 1 || index > this.length()) {
             throw new IllegalArgumentException("No element found with this index");
         }
@@ -103,7 +103,7 @@ public class Container {
      * Removes the last element
      * @return last item data
      */
-    int pop() {
+    public int pop() {
         if (this.head == null) {
             throw new NullPointerException("Empty container");
         }
@@ -127,7 +127,7 @@ public class Container {
      * @param index the index of the item
      * @return deleted item data
      */
-    int extract(int index) {
+    public int extract(int index) {
         if (index < 1 || index > this.length()) {
             throw new IllegalArgumentException("No element found with this index");
         }
@@ -163,7 +163,7 @@ public class Container {
      * Displays the elements of the container
      * @return container element string
      */
-    String show() {
+    public String show() {
         String strList = "";
         if (this.head == null) {
             strList += "Empty container :(";
@@ -182,7 +182,7 @@ public class Container {
     /**
      * @return container length
      */
-    int length() {
+    public int length() {
         int count = 0;
         ContainerElement temp = this.head;
         while (temp != null) {
@@ -195,7 +195,7 @@ public class Container {
     /**
      * @return false if container is empty
      */
-     boolean notEmpty() {
+    public boolean notEmpty() {
         return this.head != null;
     }
 }
